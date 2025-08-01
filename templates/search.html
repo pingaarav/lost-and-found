@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block content %}
+    <form action="/login" method="post">
+        <div class="form-group">
+            <label for="exampleInputPassword1">Code</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Code" name="code" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
+
