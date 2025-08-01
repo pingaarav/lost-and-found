@@ -148,3 +148,5 @@ def claim_item(item_id):
 def view_claimed():
     items = db.execute("SELECT * FROM items WHERE claimed = 1")
     return render_template("claimview.html", items=items)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)

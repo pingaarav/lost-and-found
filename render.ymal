@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: lost-and-found
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: SECRET_KEY
+        value: your-secret-key
+      - key: OPENAI_API_KEY
+        value: your-openai-key
