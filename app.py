@@ -7,6 +7,7 @@ from werkzeug.utils import secure_filename
 import base64
 from functools import wraps
 from datetime import timedelta
+import sqlite3
 
 load_dotenv()
 
@@ -17,7 +18,11 @@ app.permanent_session_lifetime = timedelta(days=7)
 
 api_key = os.getenv("OPENAI_API_KEY")
 client = openai.OpenAI(api_key=api_key)
-
+if not os.path.exists("items.db"):
+    conn = sqlite3.connect("items.db")
+    with open("schema.sql") as f:
+        conn.executescript(f.read())
+    conn.close()
 db = SQL("sqlite:///items.db")
 
 UPLOAD_FOLDER = "static/uploads"
