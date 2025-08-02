@@ -49,7 +49,7 @@ def login():
             session.permanent = True
             return redirect(url_for("index"))
         else:
-            return "WRONG CODE", 401
+            return render_template("error.html", apology = "Incorrect Password!")
     return render_template("login.html")
 
 @app.route("/logout")

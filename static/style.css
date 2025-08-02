@@ -15,10 +15,19 @@ input[type="file"] {
   font-size: 1rem;
   cursor: pointer;
 }
-
+.card-text {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+}
+.text-muted {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: lighter;
+  color: #00FF00;
+}
 button {
   background-color: #5a8dee;
   border: none;
+  font-family: 'Times New Roman', Times, serif;
   padding: 0.7rem 1.5rem;
   border-radius: 6px;
   color: white;
@@ -30,4 +39,8 @@ button {
 
 button:hover {
   background-color: #3a6ccc;
+}
+.error {
+  color: #FF0000;
+  font-family: 'Courier New', Courier, monospace;
 }
