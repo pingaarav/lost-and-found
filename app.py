@@ -37,6 +37,7 @@ def login_required(f):
 
 @app.route("/")
 def index():
+    # db.execute("DELETE FROM items")
     items = db.execute("SELECT * FROM items WHERE claimed = 0")
     return render_template("list_items.html", items=items)
 
